@@ -1,0 +1,9 @@
+# Docsy zh-cn.toml 缺失键的项目级补充（反馈组件），不改动 _vendor
+[feedback_title]
+other = "反馈"
+[feedback_question]
+other = "本页内容对你有帮助吗？"
+[feedback_positive]
+other = "有"
+[feedback_negative]
+other = "没有"

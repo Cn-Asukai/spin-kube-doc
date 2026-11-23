@@ -1,119 +1,48 @@
-# Hugo Start Template
+# SpinKube 中文文档站
 
-A starter template for Hugo static site generator with the Ananke theme.
+[spinkube.dev](https://www.spinkube.dev/docs/) 文档的中文本地化站点，基于上游 [spinframework/spinkube-docs](https://github.com/spinframework/spinkube-docs)（Hugo + Docsy）构建。
 
-## Deploy
+- 英文文档：`/docs/…`（与上游同步）
+- 中文文档：`/zh-cn/docs/…`
+- CRD / CLI 参考页为自动生成的 API 表格，保持英文原文，不做翻译
+- 未翻译的页面（blog、community 等）不显示语言切换项
 
-Deploy with EdgeOne Pages.
+## 本地开发
 
-[![部署到 EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?from=github&template=hugo-starter)
+依赖：Node.js ≥ 18、Git（Hugo 与 Docsy 已锁定在 `package.json` / `go.mod`，`_vendor/` 已落盘，无需全局安装 Hugo 或 Go）。
 
-## Features
-
-- Clean and modern design using the Ananke theme
-- Responsive layout
-- Category and tag support
-- Easy customization
-- NPM-based workflow
-
-## Prerequisites
-
-Before you begin, ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (v18 or later)
-- [Git](https://git-scm.com/)
-- [Hugo](https://gohugo.io/installation/)
-
-## Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-
-   cd hugo-start
-
-   git submodule update --init
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **View your site**
-   Open your browser and visit http://localhost:1313
-
-## Project Structure
-
-```
-hugo-start/
-├── archetypes/        # Content templates
-├── assets/           # Unprocessed assets (SCSS, JS, etc.)
-├── content/          # Site content
-│   └── get-start/    # Getting started guide
-├── data/            # Configuration files
-├── layouts/         # Template files
-├── static/          # Static files
-├── themes/          # Theme files (Ananke)
-├── hugo.toml        # Site configuration
-├── edgeone.json     # deployment configuration
-└── package.json     # NPM configuration
+```bash
+npm install
+npm run serve        # http://localhost:1313，支持中英双语
 ```
 
-## Available Scripts
+## 构建与部署
 
-- `npm run dev` - Start development server
-- `npm run build` - Build production site
-- `npm run preview` - Preview production build locally
-- `npm run clean` - Clean build directory
+```bash
+npm run build:production   # 产物输出到 public/
+```
 
-## Content Management
+推送到 GitHub 后由 [EdgeOne Pages](https://edgeone.ai/pages) 自动构建部署，配置见 `edgeone.json`。
 
-- Build static files:
-  ```bash
-  npm run build
-  ```
+## 同步上游更新
 
-## Customization
+```bash
+git remote add upstream https://github.com/spinframework/spinkube-docs.git
+git fetch upstream
+git merge upstream/main --no-edit          # 合并英文内容与配置更新
+node_modules/hugo-extended/vendor/hugo.exe mod get github.com/google/docsy@latest   # 可选：升级 Docsy
+node_modules/hugo-extended/vendor/hugo.exe mod vendor                              # 重新落盘 _vendor
+```
 
-1. **Site Configuration**
-   - Edit `hugo.toml` to modify site-wide settings
+英文页有改动时，对照更新 `content/zh-cn/` 下同名文件即可。
 
-2. **Theme Customization**
-   - Override theme templates in `/layouts`
-   - Modify styles in `/assets`
+## 翻译约定
 
-3. **Content Organization**
-   - Organize content in `/content`
-   - Create sections and categories
+- 简体中文技术文档风格，意译为主
+- 代码块、命令、YAML 字段、URL 不翻译
+- `SpinApp`、`CRD`、`Helm`、`KEDA` 等 k8s / SpinKube 生态术语保留英文
+- 被跨页锚点引用的标题保留英文锚 ID：`## 中文标题 {#english-anchor}`
 
-## Deployment
+## License
 
-1. **Build the site**
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy the `/public` directory**
-   - Upload to your web server
-   - Deploy to EdgeOne Pages
-   - Use a static site hosting service
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
-
-## Support
-
-For support, please:
-1. Check the [Hugo documentation](https://gohugo.io/documentation/)
-2. Open an issue in this repository
-3. Join the [Hugo community](https://discourse.gohugo.io/)
+内容遵循上游 [Apache-2.0](LICENSE)（文档部分 CC BY 4.0，见页脚版权声明）。
