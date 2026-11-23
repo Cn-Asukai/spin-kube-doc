@@ -3,10 +3,15 @@ title: SpinKube
 ---
 
 {{< blocks/cover title="在 Kubernetes 上由 WebAssembly 驱动的超高效无服务器方案。"
+subtitle="非官方中文翻译 · 社区维护"
 image_anchor="top" height="full" >}} <a class="btn btn-lg btn-primary me-3 mb-4" href="/zh-cn/docs/"> 快速开始 <i class="fas fa-arrow-alt-circle-right ms-2"></i> </a>
 <p class="lead mt-5">SpinKube 是一个开源的 Kubernetes 原生项目，它简化了 WebAssembly (Wasm) 工作负载在 Kubernetes 中的开发、部署与运维——让你交付更小、更可移植的应用，并享受令人惊喜的计算性能提升。</p>
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
+
+{{% alert color="warning" title="非官方翻译声明" %}}
+本站是 [spinkube.dev](https://www.spinkube.dev/) 文档的**非官方**中文翻译站点，由社区志愿者维护，与 SpinKube 官方项目及其赞助方无隶属关系，亦未经其授权或背书。翻译可能滞后于原文；内容若有出入，一律以[英文官方文档](https://www.spinkube.dev/docs/)为准。
+{{% /alert %}}
 
 
 {{% blocks/lead color="secondary" %}}
@@ -41,7 +46,7 @@ class）。Spin Operator 还引入了诸多功能，例如基于资源的伸缩�
 
 我们每两周举行一次[社区电话会议](https://docs.google.com/document/d/10is2YoNC0NpXw4_5lSyTfpPph9_A9wBissKGrpFaIrI/edit?usp=sharing)，并设有 [Slack 频道](https://cloud-native.slack.com/archives/C06PC7JA1EE)。诚邀你的加入！<br>
 
-欢迎查阅[贡献指南](/docs/contrib/)，了解如何参与本项目。
+欢迎查阅[贡献指南](/zh-cn/docs/contrib/)，了解如何参与本项目。
 
 ---
 
@@ -54,13 +59,13 @@ class）。Spin Operator 还引入了诸多功能，例如基于资源的伸缩�
     alt="cloud-native computing"
     src="../cloud-native-computing.svg">
 
-<div class="text-center">我们是 <a href="https://www.cncf.io">Cloud Native Computing Foundation</a> 的沙箱项目。</div>
+<div class="text-center">SpinKube 是 <a href="https://www.cncf.io">Cloud Native Computing Foundation</a> 的沙箱项目。</div>
 
 <p>
   <div class="text-center">
-  Copyright SpinKube a Series of LF Projects, LLC
+  本站为 SpinKube 文档的非官方中文翻译站点，与 SpinKube a Series of LF Projects, LLC 无隶属关系，亦未经其授权或背书。
   <br>
-  有关网站使用条款、商标政策及其他项目政策，请参阅
+  原文、商标及相关政策归其各自权利方所有，详见
   <a href="https://lfprojects.org/policies/">https://lfprojects.org/policies/</a>。</div>
 </p>
 

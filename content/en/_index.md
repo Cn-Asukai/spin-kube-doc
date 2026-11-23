@@ -3,12 +3,17 @@ title: SpinKube
 ---
 
 {{< blocks/cover title="Hyper-efficient serverless on Kubernetes, powered by WebAssembly."
+subtitle="Unofficial community translation · 中文版 /zh-cn/"
 image_anchor="top" height="full" >}} <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs"> Get
   Started <i class="fas fa-arrow-alt-circle-right ms-2"></i> </a>
 <p class="lead mt-5">SpinKube is an open source, Kubernetes native project that streamlines developing,
 deploying, and operating WebAssembly (Wasm) workloads in Kubernetes - resulting in delivering smaller, more portable applications with exciting compute performance benefits.</p>
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
+
+{{% alert color="warning" title="Unofficial translation" %}}
+This is an **unofficial**, community-maintained translation of the [spinkube.dev](https://www.spinkube.dev/) documentation, not affiliated with or endorsed by the SpinKube project. The translation may lag behind the original; when in doubt, refer to the [official English docs](https://www.spinkube.dev/docs/).
+{{% /alert %}}
 
 
 {{% blocks/lead color="secondary" %}}
@@ -64,13 +69,13 @@ Check out the [contribution guidelines](/docs/contrib/) to learn how to get invo
     alt="cloud-native computing"
     src="../cloud-native-computing.svg">
 
-<div class="text-center">We are a <a href="https://www.cncf.io">Cloud Native Computing Foundation</a> sandbox project.</div>
+<div class="text-center">SpinKube is a <a href="https://www.cncf.io">Cloud Native Computing Foundation</a> sandbox project.</div>
 
 <p>
   <div class="text-center">
-  Copyright SpinKube a Series of LF Projects, LLC
+  This site is an unofficial community translation of the SpinKube documentation, not affiliated with SpinKube a Series of LF Projects, LLC.
   <br>
-  For website terms of use, trademark policy and other project policies please see
+  The original content, trademarks and project policies belong to their respective owners, see
   <a href="https://lfprojects.org/policies/">https://lfprojects.org/policies/</a>.</div>
 </p>
 

@@ -6,6 +6,8 @@ menu: {main: {weight: 20}}
 
 关于 SpinKube，你需要了解的一切。
 
+> **本站为社区维护的非官方中文翻译**，与 SpinKube 官方项目无关，内容以 [英文官方文档](https://www.spinkube.dev/docs/) 为准。
+
 ## 第一步
 
 要开始使用 SpinKube，请阅读我们的[快速开始指南]({{< ref "quickstart" >}})。
