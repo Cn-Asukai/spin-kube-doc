@@ -119,8 +119,8 @@ version = "0.0.0"
 url_latest_version = "https://spinkube.dev"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/spinframework/spinkube-docs"
-# An optional link to a related project repo. For example, the sibling repository where your product code lives.
+github_repo = "https://github.com/Cn-Asukai/spin-kube-doc"
+# 产品本身的 issue 仍指向上游项目仓库（页面上标注为 Create project issue）
 github_project_repo = "https://github.com/spinframework/spin-operator"
 
 # Specify a value here if your content directory is not in your repo's root directory
@@ -165,8 +165,8 @@ sidebar_search_disable = true
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it!'
-no = 'Sorry to hear that. Please <a href="https://github.com/spinframework/spinkube-docs/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! 很高兴帮到你。'
+no = 'Sorry to hear that. 请通过 <a href="https://github.com/Cn-Asukai/spin-kube-doc/issues/new">本仓库 issue</a> 告诉我们如何改进翻译；产品本身的问题请提给 <a href="https://github.com/spinframework/spin-operator/issues">上游项目</a>。'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page,
