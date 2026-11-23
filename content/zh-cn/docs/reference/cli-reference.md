@@ -1,6 +1,6 @@
 ---
-title: CLI Reference
-description: Spin Plugin kube CLI Reference.
+title: CLI 参考
+description: Spin Plugin kube CLI 参考。
 weight: 3
 categories: [reference]
 tags: [plugins]
@@ -12,36 +12,36 @@ aliases:
 
 ```bash
 spin kube completion --help
-Generate the autocompletion script for kube for the specified shell.
-See each sub-command's help for details on how to use the generated script.
+为指定的 shell 生成 kube 的自动补全脚本。
+关于如何使用生成的脚本，请参阅各子命令的帮助信息。
 
 Usage:
   kube completion [command]
 
 Available Commands:
-  bash        Generate the autocompletion script for bash
-  fish        Generate the autocompletion script for fish
-  powershell  Generate the autocompletion script for powershell
-  zsh         Generate the autocompletion script for zsh
+  bash        生成 bash 的自动补全脚本
+  fish        生成 fish 的自动补全脚本
+  powershell  生成 powershell 的自动补全脚本
+  zsh         生成 zsh 的自动补全脚本
 
 Flags:
-  -h, --help   help for completion
+  -h, --help   completion 的帮助信息
 ```
 
 ### spin kube completion bash
 
 ```bash
 spin kube completion bash --help
-Generate the autocompletion script for the bash shell.
+为 bash shell 生成自动补全脚本。
 
-This script depends on the 'bash-completion' package.
-If it is not installed already, you can install it via your OS's package manager.
+此脚本依赖 'bash-completion' 包。
+如果尚未安装，可以通过操作系统的包管理器安装。
 
-To load completions in your current shell session:
+要在当前 shell 会话中加载补全：
 
 	source <(kube completion bash)
 
-To load completions for every new session, execute once:
+要为每个新会话加载补全，只需执行一次：
 
 #### Linux:
 
@@ -51,77 +51,77 @@ To load completions for every new session, execute once:
 
 	kube completion bash > $(brew --prefix)/etc/bash_completion.d/kube
 
-You will need to start a new shell for this setup to take effect.
+此设置需要启动新的 shell 才能生效。
 
 Usage:
   kube completion bash
 
 Flags:
-  -h, --help              help for bash
-      --no-descriptions   disable completion descriptions
+  -h, --help              bash 的帮助信息
+      --no-descriptions   禁用补全描述
 ```
 
 ### spin kube completion fish
 
 ```bash
 spin kube completion fish --help
-Generate the autocompletion script for the fish shell.
+为 fish shell 生成自动补全脚本。
 
-To load completions in your current shell session:
+要在当前 shell 会话中加载补全：
 
 	kube completion fish | source
 
-To load completions for every new session, execute once:
+要为每个新会话加载补全，只需执行一次：
 
 	kube completion fish > ~/.config/fish/completions/kube.fish
 
-You will need to start a new shell for this setup to take effect.
+此设置需要启动新的 shell 才能生效。
 
 Usage:
   kube completion fish [flags]
 
 Flags:
-  -h, --help              help for fish
-      --no-descriptions   disable completion descriptions
+  -h, --help              fish 的帮助信息
+      --no-descriptions   禁用补全描述
 ```
 
 ### spin kube completion powershell
 
 ```bash
 spin kube completion powershell --help
-Generate the autocompletion script for powershell.
+为 powershell 生成自动补全脚本。
 
-To load completions in your current shell session:
+要在当前 shell 会话中加载补全：
 
 	kube completion powershell | Out-String | Invoke-Expression
 
-To load completions for every new session, add the output of the above command
-to your powershell profile.
+要为每个新会话加载补全，请将上述命令的输出
+添加到你的 powershell 配置文件（profile）中。
 
 Usage:
   kube completion powershell [flags]
 
 Flags:
-  -h, --help              help for powershell
-      --no-descriptions   disable completion descriptions
+  -h, --help              powershell 的帮助信息
+      --no-descriptions   禁用补全描述
 ```
 
 ### spin kube completion zsh
 
 ```bash
 spin kube completion zsh --help
-Generate the autocompletion script for the zsh shell.
+为 zsh shell 生成自动补全脚本。
 
-If shell completion is not already enabled in your environment you will need
-to enable it.  You can execute the following once:
+如果你的环境中尚未启用 shell 补全，需要先启用它。
+只需执行以下命令一次：
 
 	echo "autoload -U compinit; compinit" >> ~/.zshrc
 
-To load completions in your current shell session:
+要在当前 shell 会话中加载补全：
 
 	source <(kube completion zsh)
 
-To load completions for every new session, execute once:
+要为每个新会话加载补全，只需执行一次：
 
 #### Linux:
 
@@ -131,63 +131,63 @@ To load completions for every new session, execute once:
 
 	kube completion zsh > $(brew --prefix)/share/zsh/site-functions/_kube
 
-You will need to start a new shell for this setup to take effect.
+此设置需要启动新的 shell 才能生效。
 
 Usage:
   kube completion zsh [flags]
 
 Flags:
-  -h, --help              help for zsh
-      --no-descriptions   disable completion descriptions
+  -h, --help              zsh 的帮助信息
+      --no-descriptions   禁用补全描述
 ```
 
 ## spin kube help
 
 ```bash
 spin kube --help
-Manage apps running on Kubernetes
+管理运行在 Kubernetes 上的应用
 
 Usage:
   kube [command]
 
 Available Commands:
-  completion  Generate the autocompletion script for the specified shell
-  help        Help about any command
-  scaffold    scaffold SpinApp manifest
-  version     Display version information
+  completion  为指定的 shell 生成自动补全脚本
+  help        任何命令的帮助信息
+  scaffold    生成 SpinApp 清单（manifest）
+  version     显示版本信息
 
 Flags:
-  -h, --help                help for kube
-      --kubeconfig string   the path to the kubeconfig file
-  -n, --namespace string    the namespace scope
-  -v, --version             version for kube
+  -h, --help                kube 的帮助信息
+      --kubeconfig string   kubeconfig 文件的路径
+  -n, --namespace string    namespace 作用域
+  -v, --version             kube 的版本信息
 ```
 
 ## spin kube scaffold
 
 ```bash
 spin kube scaffold --help
-scaffold SpinApp manifest
+生成 SpinApp 清单（manifest）
 
 Usage:
   kube scaffold [flags]
 
 Flags:
-      --autoscaler string                            The autoscaler to use. Valid values are 'hpa' and 'keda'
-      --autoscaler-target-cpu-utilization int32      The target CPU utilization percentage to maintain across all pods (default 60)
-      --autoscaler-target-memory-utilization int32   The target memory utilization percentage to maintain across all pods (default 60)
-      --cpu-limit string                             The maximum amount of CPU resource units the Spin application is allowed to use
-      --cpu-request string                           The amount of CPU resource units requested by the Spin application. Used to determine which node the Spin application will run on
-      --executor string                              The executor used to run the Spin application (default "containerd-shim-spin")
-  -f, --from string                                  Reference in the registry of the Spin application
-  -h, --help                                         help for scaffold
-  -s, --image-pull-secret strings                    secrets in the same namespace to use for pulling the image
-      --max-replicas int32                           Maximum number of replicas for the spin app. Autoscaling must be enabled to use this flag (default 3)
-      --memory-limit string                          The maximum amount of memory the Spin application is allowed to use
-      --memory-request string                        The amount of memory requested by the Spin application. Used to determine which node the Spin application will run on
-  -o, --out string                                   path to file to write manifest yaml
-  -r, --replicas int32                               Minimum number of replicas for the spin app (default 2)
-  -c, --runtime-config-file string                   path to runtime config file
+      --autoscaler string                            要使用的 autoscaler。有效值为 'hpa' 和 'keda'
+      --autoscaler-target-cpu-utilization int32      要在所有 Pod 上维持的目标 CPU 利用率百分比（默认 60）
+      --autoscaler-target-memory-utilization int32   要在所有 Pod 上维持的目标内存利用率百分比（默认 60）
+      --cpu-limit string                             允许 Spin 应用使用的最大 CPU 资源量
+      --cpu-request string                           Spin 应用请求的 CPU 资源量。用于确定 Spin 应用将运行在哪个节点上
+      --executor string                              用于运行 Spin 应用的 executor（默认 "containerd-shim-spin"）
+  -f, --from string                                  Spin 应用在 registry 中的引用
+  -h, --help                                         scaffold 的帮助信息
+  -s, --image-pull-secret strings                     拉取 image 时使用的、位于同一 namespace 中的 secret
+      --max-replicas int32                           spin 应用的最大副本数。使用此 flag 需启用自动缩放（默认 3）
+      --memory-limit string                          允许 Spin 应用使用的最大内存量
+      --memory-request string                        Spin 应用请求的内存量。用于确定 Spin 应用将运行在哪个节点上
+  -o, --out string                                   写入 manifest yaml 的文件路径
+  -r, --replicas int32                               spin 应用的最小副本数（默认 2）
+  -c, --runtime-config-file string                   runtime config 文件的路径
 ```
 
 ## spin kube version

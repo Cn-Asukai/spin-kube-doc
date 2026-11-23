@@ -1,25 +1,25 @@
 ---
 title: SpinAppExecutor
 weight: 2
-description: Custom Resource Definition (CRD) reference for `SpinAppExecutor`
+description: "`SpinAppExecutor` 的 Custom Resource Definition (CRD) 参考"
 categories: [Spin Operator]
 tags: [reference]
 ---
-Resource Types:
+资源类型：
 
 - [SpinAppExecutor](#spinappexecutor)
 
 ## SpinAppExecutor
 
-SpinAppExecutor is the Schema for the spinappexecutors API
+SpinAppExecutor 是 spinappexecutors API 的 schema
 
 <table>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Required</th>
+            <th>名称</th>
+            <th>类型</th>
+            <th>描述</th>
+            <th>必填</th>
         </tr>
     </thead>
     <tbody><tr>
@@ -37,20 +37,20 @@ SpinAppExecutor is the Schema for the spinappexecutors API
       <tr>
       <td><b><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.27/#objectmeta-v1-meta">metadata</a></b></td>
       <td>object</td>
-      <td>Refer to the Kubernetes API documentation for the fields of the `metadata` field.</td>
+      <td>`metadata` 字段的各字段说明参见 Kubernetes API 文档。</td>
       <td>true</td>
       </tr><tr>
         <td><b><a href="#spinappexecutorspec">spec</a></b></td>
         <td>object</td>
         <td>
-          SpinAppExecutorSpec defines the desired state of SpinAppExecutor<br/>
+          SpinAppExecutorSpec 定义 SpinAppExecutor 的期望状态<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b>status</b></td>
         <td>object</td>
         <td>
-          SpinAppExecutorStatus defines the observed state of SpinAppExecutor<br/>
+          SpinAppExecutorStatus 定义 SpinAppExecutor 的实际观测状态<br/>
         </td>
         <td>false</td>
       </tr></tbody>
@@ -61,31 +61,31 @@ SpinAppExecutor is the Schema for the spinappexecutors API
 <small>[back to parent](#spinappexecutor)</small>
 
 
-SpinAppExecutorSpec defines the desired state of SpinAppExecutor
+SpinAppExecutorSpec 定义 SpinAppExecutor 的期望状态
 
 <table>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Required</th>
+            <th>名称</th>
+            <th>类型</th>
+            <th>描述</th>
+            <th>必填</th>
         </tr>
     </thead>
     <tbody><tr>
         <td><b>createDeployment</b></td>
         <td>boolean</td>
         <td>
-          CreateDeployment specifies whether the Executor wants the SpinKube operator
-to create a deployment for the application or if it will be realized externally.<br/>
+          CreateDeployment 指定 Executor 是希望由 SpinKube operator 为应用创建
+deployment，还是将由外部方式实现。<br/>
         </td>
         <td>true</td>
       </tr><tr>
         <td><b><a href="#spinappexecutorspecdeploymentconfig">deploymentConfig</a></b></td>
         <td>object</td>
         <td>
-          DeploymentConfig specifies how the deployment should be configured when
-createDeployment is true.<br/>
+          DeploymentConfig 指定当 createDeployment 为 true 时
+deployment 应如何配置。<br/>
         </td>
         <td>false</td>
       </tr></tbody>
@@ -96,60 +96,57 @@ createDeployment is true.<br/>
 <small>[back to parent](#spinappexecutorspec)</small>
 
 
-DeploymentConfig specifies how the deployment should be configured when
-createDeployment is true.
+DeploymentConfig 指定当 createDeployment 为 true 时 deployment 应如何配置。
 
 <table>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Required</th>
+            <th>名称</th>
+            <th>类型</th>
+            <th>描述</th>
+            <th>必填</th>
         </tr>
     </thead>
     <tbody><tr>
         <td><b>caCertSecret</b></td>
         <td>string</td>
         <td>
-          CACertSecret specifies the name of the secret containing the CA
-certificates to be mounted to the deployment.<br/>
+          CACertSecret 指定包含要挂载到 deployment 的 CA
+证书的 secret 名称。<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b>installDefaultCACerts</b></td>
         <td>boolean</td>
         <td>
-          InstallDefaultCACerts specifies whether the default CA
-certificate bundle should be generated. When set a new secret
-will be created containing the certificates. If no secret name is
-defined in `CACertSecret` the secret name will be `spin-ca`.<br/>
+          InstallDefaultCACerts 指定是否应生成默认 CA
+证书包。设置后将创建一个包含这些证书的新 secret。如果未在
+`CACertSecret` 中定义 secret 名称，则 secret 名称为
+`spin-ca`。<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b><a href="#spinappexecutorspecdeploymentconfigotel">otel</a></b></td>
         <td>object</td>
         <td>
-          Otel provides Kubernetes Bindings to Otel Variables.<br/>
+          Otel 提供到 Otel 变量的 Kubernetes 绑定。<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b>runtimeClassName</b></td>
         <td>string</td>
         <td>
-          RuntimeClassName is the runtime class name that should be used by pods created
-as part of a deployment. This should only be defined when SpintainerImage is not defined.<br/>
+          RuntimeClassName 是 deployment 所创建的 Pod 应使用的
+RuntimeClass 名称。仅应在未定义 SpintainerImage 时定义。<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b>spinImage</b></td>
         <td>string</td>
         <td>
-          SpinImage points to an image that will run Spin in a container to execute
-your SpinApp. This is an alternative to using the shim to execute your
-SpinApp. This should only be defined when RuntimeClassName is not
-defined. When specified, application images must be available without
-authentication.<br/>
+          SpinImage 指向一个将在容器中运行 Spin 以执行
+SpinApp 的 image。这是使用 shim 执行 SpinApp 之外的另一种方式。仅应在未定义 RuntimeClassName 时
+定义。指定后，应用 image 必须可在无需认证的情况下获取。<br/>
         </td>
         <td>false</td>
       </tr></tbody>
@@ -160,46 +157,45 @@ authentication.<br/>
 <small>[back to parent](#spinappexecutorspecdeploymentconfig)</small>
 
 
-Otel provides Kubernetes Bindings to Otel Variables.
+Otel 提供到 Otel 变量的 Kubernetes 绑定。
 
 <table>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Required</th>
+            <th>名称</th>
+            <th>类型</th>
+            <th>描述</th>
+            <th>必填</th>
         </tr>
     </thead>
     <tbody><tr>
         <td><b>exporter_otlp_endpoint</b></td>
         <td>string</td>
         <td>
-          ExporterOtlpEndpoint configures the default combined otlp endpoint for sending telemetry<br/>
+          ExporterOtlpEndpoint 配置用于发送遥测数据的默认合并 otlp endpoint<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b>exporter_otlp_logs_endpoint</b></td>
         <td>string</td>
         <td>
-          ExporterOtlpLogsEndpoint configures the logs-specific otlp endpoint<br/>
+          ExporterOtlpLogsEndpoint 配置日志专用的 otlp endpoint<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b>exporter_otlp_metrics_endpoint</b></td>
         <td>string</td>
         <td>
-          ExporterOtlpMetricsEndpoint configures the metrics-specific otlp endpoint<br/>
+          ExporterOtlpMetricsEndpoint 配置指标专用的 otlp endpoint<br/>
         </td>
         <td>false</td>
       </tr><tr>
         <td><b>exporter_otlp_traces_endpoint</b></td>
         <td>string</td>
         <td>
-          ExporterOtlpTracesEndpoint configures the trace-specific otlp endpoint<br/>
+          ExporterOtlpTracesEndpoint 配置 trace 专用的 otlp endpoint<br/>
         </td>
         <td>false</td>
       </tr></tbody>
 </table>
-
 
